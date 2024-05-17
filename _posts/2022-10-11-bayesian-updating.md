@@ -1,6 +1,6 @@
 ---
-title: "How machines updates their beliefs"
-permalink: intutive-bayesian
+title: "Quantifying the Idea of Updating beliefs"
+permalink: intutive-introduction-bayesian
 description: Here's a intutive introduction to Bayesian Statistics
 last_modified_at: 2022-10-01T16:20:02-05:00
 mathjax: true
@@ -11,7 +11,7 @@ tags:
   - Bayesian
   - probability
   - standard
-excerpt: A brief summary of my blog post. Including relevant keywords
+excerpt: Everyone has some intuitive example in their mind to understand Bayesian Statistics. Mine's a bit Scary!
 ---
 
 Each of us holds a set of beliefs that we have developed through our experiences. Every time we have to make a decision, we tend to base it on those belief i.e. our attitude towards the world at that given time. Time here is a very important dimension because with time we update our beliefs. Although the ability to always search for the motivation to change/update self-beliefs are important for us to make a better decision yet human factors like ego, blind superstition, etc comes as a tyrannical force to prevent us from changing or updating our self-beliefs.
