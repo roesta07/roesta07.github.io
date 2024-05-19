@@ -113,10 +113,10 @@ analytics:
 # Site Author
 author:
   name             : "Rojan Shrestha"
-  avatar           : "/assets/images/rojan_profile.jpeg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Marketer turned Analyst turned Marketing Analyst"
+  avatar           : "/assets/images/rojan_profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Marketer turned Analyst"
   location         : "Kathmandu, Nepal"
-  email            : "ro.esta07@gmail.com"
+  # email            : "ro.esta07@gmail.com"
   links:
     # - label: "Email"
     #   icon: "fas fa-fw fa-envelope-square"

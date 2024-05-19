@@ -5,12 +5,12 @@ description: Here's a intutive introduction to Bayesian Statistics
 last_modified_at: 2022-10-01T16:20:02-05:00
 mathjax: true
 toc: true
-categories:
-  - Blog
-tags:
-  - Bayesian
-  - probability
-  - standard
+# categories:
+#   - Blog
+# tags:
+#   - Bayesian
+#   - probability
+#   - standard
 excerpt: Everyone has some intuitive example in their mind to understand Bayesian Statistics. Mine's a bit Scary!
 ---
 

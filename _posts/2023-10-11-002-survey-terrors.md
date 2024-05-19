@@ -1,15 +1,15 @@
 ---
-title: "TRYING SOME PROBABILITY THEORY ON MY SURVEY DATA"
+title: "Probability Theory Meets Survey Data"
 permalink: survey-measurement-issues
 description: 
 last_modified_at: 2022-10-01T16:20:02-05:00
 mathjax: true
 toc: true
-categories:
-  - Blog
-tags:
-  - Bayesian
-  - probability
+# categories:
+#   - Blog
+# tags:
+#   - Bayesian
+#   - probability
 excerpt: Sometimes you really wonder where examples like the Monty Hall problem are actually used.
 ---
 
