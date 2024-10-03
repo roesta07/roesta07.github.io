@@ -11,8 +11,9 @@ toc: true
 #   - Bayesian
 #   - probability
 #   - standard
-excerpt: Everyone has some intuitive example in their mind to understand Bayesian Statistics. Mine's a bit Scary!
+excerpt: Everyone has their go-to example to explain Bayesian Statistics. Mine's just a bit... scary!
 ---
+>Everyone has their go-to example to explain Bayesian Statistics. Mine's just a bit... scary!
 
 Each of us holds a set of beliefs that we have developed through our experiences. Every time we have to make a decision, we tend to base it on those belief i.e. our attitude towards the world at that given time. Time here is a very important dimension because with time we update our beliefs. Although the ability to always search for the motivation to change/update self-beliefs are important for us to make a better decision yet human factors like ego, blind superstition, etc comes as a tyrannical force to prevent us from changing or updating our self-beliefs.
 

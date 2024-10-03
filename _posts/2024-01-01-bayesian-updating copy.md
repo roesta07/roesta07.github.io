@@ -13,6 +13,7 @@ toc: true
 #   - standard
 excerpt: A moment of realization when the Beta-Binomial Model and the Multilevel Binomial Model produces similar estimates
 ---
+> Spoiler alert: One day I was tinkering with these two models, completely unaware they'd turn out to be the same!
 
 In this article, we will compare two models: the Beta Binomial Model and the Multilevel Binomial Model, to see how they are equivalent and produce similar estimates
 
