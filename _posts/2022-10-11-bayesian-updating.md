@@ -13,7 +13,7 @@ toc: true
 #   - standard
 excerpt: Everyone has their go-to example to explain Bayesian Statistics. Mine's just a bit... scary!
 ---
->Everyone has their go-to example to explain Bayesian Statistics. Mine's just a bit... scary!
+>Everyone has their go-to example to explain Bayesian Updating. Mine's just a bit... scary!
 
 Each of us holds a set of beliefs that we have developed through our experiences. Every time we have to make a decision, we tend to base it on those belief i.e. our attitude towards the world at that given time. Although the ability to always search for the motivation to change/update self-beliefs are important for us to make a better decision yet human factors like ego, blind superstition, etc comes as a tyrannical force to prevent us from changing or updating our self-beliefs.
 
@@ -112,23 +112,23 @@ Defining our Prior and Likelihoods:
 
 $$ P(\theta)\sim Beta(\alpha,\beta) \quad \quad \quad \text{[Prior]}$$
 
-$$\theta \sim \frac{p^{\alpha-1} *(1-\theta)^{\beta-1}}{B(\alpha,\beta)}$$
+$$\theta \sim \frac{\theta^{\alpha-1} *(1-\theta)^{\beta-1}}{B(\alpha,\beta)}$$
 
-$$ B(\alpha,\beta) $$ is a constant and it does not depend on p we can remove it from the equation
+$$ B(\alpha,\beta) $$ is a constant and it does not depend on $$ \theta $$ we can remove it from the equation
 
-$$f(\theta) = {p^{\alpha-1} *(1-p)^{\beta-1}}$$
+$$f(\theta) = {\theta^{\alpha-1} *(1-\theta)^{\beta-1}}$$
 
 Now we define our likelihood; where X is the random Variable that can take values X can take values either of {0,1}.
 
-$$P(X|\theta) \sim Bernoulli(p) \quad \quad \quad \text{[ Bernoulli likelihood]} $$
+$$P(X|\theta) \sim Bernoulli(\theta) \quad \quad \quad \text{[ Bernoulli likelihood]} $$
 
 $$P(X|\theta) \sim \theta^{x} (1-\theta)^{1-x}$$
 
 Since, we have everything we need; plugging the values in above formula;
 
-$$ P(\theta|X)=\frac{P(\theta)*P(X|\theta)}{P(\theta)} $$ 
+$$ P(\theta|X)=\frac{P(\theta)*P(X|\theta)}{P(\theta)} $$
 
-$$ P(\theta|X)= \theta^{(\alpha + x)-1} (1-p)^{(\beta-x)-1} $$
+$$ P(\theta|X)= \theta^{(\alpha + x)-1} (1-\theta)^{(\beta-x)-1} $$
 
 let,$$\alpha'=\alpha + k$$ and $$\beta'=\beta-k$$;
 
