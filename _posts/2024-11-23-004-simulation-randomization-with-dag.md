@@ -18,7 +18,7 @@ One random day, I was having a conversation with someone I’ll call Mike—*a S
 
 I told him about how I use randomization everyday in my work, but honestly, I’d never really grasped how it actually works. All those theory, mathematical notations , assumptions, and terms like exchangeability, just end up clouding my understanding of randomization.
 
-Mike smiled, as if he held a secret I hadn’t yet uncovered, and said,
+Mike smiled, as if he knew something that I hadn't, and said,
 
 >"Let me make it easy for you. I’ll show you how randomization really works in a simplest way that the world had never seen before."
 
@@ -158,7 +158,7 @@ Now that we understand the limitations of the previous approach, we can better a
 
 Consider this new DAG (Figure 3):
 <div style="text-align: center;"> <img src="/assets/images/posts/004/dag2.png" width="350" class="inline"> </div>
-*Figure 2 : DAG Randomized*
+*Figure 3 : DAG Randomized*
 {: .text-center}
 
 The key difference here is that the arrow from Smoking to Coffee is missing. Instead, we’ve used randomization to assign coffee consumption. This means, for each participant, we flip a coin to assign them to either the Coffee or No-Coffee group, and then track them over time—whether it’s 1, 10, or 30 years—depending on the study’s design. While this process may seem impractical for quickly obtaining results, simulations allow us to "travel through time" and understand how the analysis would unfold, providing valuable insights into the impact of randomization.
@@ -216,6 +216,12 @@ Now, when we run the same regression with randomized data, we find no associatio
 Since the groups are now comparable, the effects we observe are solely due to coffee. Randomization ensures that any differences between the groups are evenly distributed, meaning the observed outcomes can be attributed directly to the effect of coffee alone.
 
 Randomization is a powerful statistical tool that eliminates bias, such as the confounding effect of smoking in this case given that it is applied properly. In real-world data, there are often multiple confounding variables beyond smoking. Randomization effectively mitigates these biases, allowing for a clearer understanding of the true effect of the treatment.
+
+
+## More on Randomization
+> [Out of Balance](https://www.notion.so/Understanding-Randomization-with-DAGs-and-Simulations-12433e59073b80f8969bc75ecb5ab1fe?pvs=4#14833e59073b8017bfc1fe9a4f10b79c) , DarrenDahly,PhD
+> [RCT Analysis With Covariate Adjustment](https://www.fharrell.com/post/covadj/) Ewout Steyerbert
+> [statistical Control Requires Causal Justification](https://journals.sagepub.com/doi/10.1177/25152459221095823) , Wysocki,Lawson,Rhemtulla
 
 
 
