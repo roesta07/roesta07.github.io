@@ -1,5 +1,5 @@
 ---
-title: "Simulation as a Key to Understanding Randomization"
+title: "How Randomization Magically Works .."
 permalink: simulation-randomization-with-dag
 description: 
 last_modified_at: 2024-11-23T16:20:02-05:00
@@ -50,7 +50,7 @@ Take a look at this DAG (Fig. 1), which illustrates the data generation process 
 *Fig 1: DAG; a without randomization*
 {: .text-center}
 
-If you examine this DAG closely, you’ll notice a variable called “Smoking.” While it isn’t the focus of our research question, it plays a critical role in the analysis. Here’s the catch: when you surveyed people about their coffee consumption, you didn’t ask about their smoking habits. However, in an observational setting, ignoring a variable doesn’t mean its influence disappears.
+If you examine this DAG closely, you’ll notice a variable called “Smoking.” While it isn’t the focus of our research question, it plays a critical role in the analysis.People who smoke are more likely to consume beverages like coffee, which is why there’s an arrow connecting Smoking to Coffee. Additionally, we know that smoking increases the risk of cancer, represented by the arrow from Smoking to Cancer. Here’s the catch: when you surveyed people about their coffee consumption, you didn’t ask about their smoking habits. However, in an observational setting, ignoring a variable doesn’t mean its influence disappears.
 
 [Spoiler alert]  Coffee doesn’t actually cause cancer and we are going to use this information to simulate our data. However, smokers tend to drink more coffee, and this correlation introduces complications in the analysis.
 
@@ -58,6 +58,10 @@ We’ll explore how the “Smoking” variable significantly affects the results
 
 
 ```python
+
+import numpy as np
+import pandas as pd
+from scipy.special import expit as logistic
 n_sample = 200
 Smoking = np.random.binomial(1,0.4,size = n_sample)
 Coffee = np.random.binomial(1,logistic(-2 + 2.5*Smoking))
@@ -81,7 +85,7 @@ The function ```np.random.binomial(1, 0.4, size=n_sample)``` generates a sample 
 ```python
 Coffee = np.random.binomial(1,p=logistic(-2 + 2.5*Smoking))
 ```
-the proportion of Coffee drinkers, ```p = logistic(-2 + 2.5*Smoking)```, depends on Smoking. logistic is a sigmoid function which just transforms the values into proportion i.e between 0 and 1. So, if Smoking is 0 then the ```logistic(-2 + 2.5* 0 )``` is around 0.12 . and if Smoking is one then ```logistic(-2 + 2.5* 1)``` is around 0.62. Thus, the smokers are more likely to be frequent Coffee drinkers than the non-smokers.
+the proportion of Coffee drinkers, ```p = logistic(-2 + 2.5*Smoking)```, depends on Smoking. Logistic is a <a href="https://en.wikipedia.org/wiki/Sigmoid_function" target="_blank">sigmoid function</a> which just transforms the values into proportion i.e between 0 and 1. So, if Smoking is 0 then the ```logistic(-2 + 2.5* 0 )``` is around 0.12 . and if Smoking is one then ```logistic(-2 + 2.5* 1)``` is around 0.62. Thus, the smokers are more likely to be frequent Coffee drinkers than the non-smokers.
 
 ```python
 Cancer = np.random.binomial(1,logistic(-2 + 2*Smoking + 0*Coffee))
@@ -104,9 +108,9 @@ To revise this, In this simulation:
 This setup mirrors real-world situations where confounding factors can distort the apparent relationships between variables.
 Now, let’s fit a logistic regression model to test the relationship between coffee consumption and cancer:
 
-**Model:** $$`Cancer \sim Coffee`$$
+**Model 1 :** $$`Cancer \sim Coffee`$$
 
-Below is the code to fit this model. Don’t worry if you don’t fully understand it yet — for now, we’re simply estimating the effect of coffee on cancer based on the model.
+In this model, we are examining how cancer is influenced by coffee consumption. The code below demonstrates how to fit this model. Don’t worry if the details of the code are unclear for now — the focus is on estimating the relationship between coffee and cancer as specified in the model.
 
 ```python
 import statsmodels.formula.api as smf
@@ -150,6 +154,8 @@ plt.show()
 
 The observed association between coffee and cancer appears positive, as the estimates (represented by the blue dots) are clearly greater than zero. However, this is not a causal effect. How do we know that? Because, we explicitly set the causal effect of coffee on cancer to zero in our simulation. The true cause of cancer is smoking, which also influences coffee consumption. This creates a positive association between coffee and cancer, but it's not causal—it's driven by smoking acting as a confounder that affects both variables.
 
+<div > <img src="/assets/images/posts/004/groups_not_comparable.png" width="820" class="inline"> </div>
+
 To better understand this, consider an illustration: the proportion of smokers is higher in the coffee-drinking group compared to the non-coffee group. This makes the two groups non-comparable, or more precisely, non-exchangeable.
 
 ## Introducing Randomization
@@ -157,7 +163,7 @@ To better understand this, consider an illustration: the proportion of smokers i
 Now that we understand the limitations of the previous approach, we can better appreciate the crucial role randomization plays.
 
 Consider this new DAG (Figure 3):
-<div style="text-align: center;"> <img src="/assets/images/posts/004/dag2.png" width="350" class="inline"> </div>
+<div style="text-align: center;"> <img src="/assets/images/posts/004/image.png" width="550" class="inline"> </div>
 *Figure 3 : DAG Randomized*
 {: .text-center}
 
@@ -197,11 +203,11 @@ This step introduces the concept of **randomization**, often used in experiments
 Cancer = np.random.binomial(1, logistic(-2 + 2*Smoking + 0 **Coffee))
 ```
 
-The probability of cancer is determined by smoking status alone, with no effect from coffee drinking (`0*Coffee` contributes nothing). The log-odds for cancer are calculated, and the `logistic` function transforms these log-odds into probabilities between 0 and 1.
+The probability of cancer is determined by smoking status alone, with no effect from coffee drinking (`0*Coffee`) contributes nothing. The log-odds for cancer are calculated, and the `logistic` function transforms these log-odds into probabilities between 0 and 1.
 
 - If an individual does **not smoke** (`Smoking=0`), the log-odds is −2, corresponding to a probability of cancer:p=logistic(−2)≈0.12. Thus, non-smokers have around a 12% chance of developing cancer.
     
-- If an individual **smokes** (`Smoking=1`), the log-odds increase to −2+2=0, giving a probability of cancer:p=expit(0)=0.5.
+- If an individual **smokes** (`Smoking=1`), the log-odds increase to −2+2=0, giving a probability of cancer:p=logistic(0)=0.5.
     
 
 
@@ -211,17 +217,26 @@ Now, lets run and plot the estimates
 *Figure 3: Parameters estimates for Randomized Study*
 {: .text-center}
 
-Now, when we run the same regression with randomized data, we find no association between coffee and cancer. This result reflects the true nature of the relationship, as there is no causal link between the two. By using randomization, we have removed the influence of confounders like smoking, ensuring that any observed associations—or lack thereof—are causal. This demonstrates how randomization helps isolate the effect of the treatment, providing a more accurate understanding of cause and effect.
+After we run the same regression with randomized data, we find no association between coffee and cancer. This result reflects the true nature of the relationship, as there is no causal link between the two. By using randomization, we have removed the influence of confounders like smoking, ensuring that any observed associations—or lack thereof—are causal. This demonstrates how randomization helps isolate the effect of the treatment, providing a more accurate understanding of cause and effect.
 
-Since the groups are now comparable, the effects we observe are solely due to coffee. Randomization ensures that any differences between the groups are evenly distributed, meaning the observed outcomes can be attributed directly to the effect of coffee alone.
+Since the groups are now comparable, the effects we observe are solely due to coffee. Randomization ensures that any differences between the groups are evenly distributed, meaning the observed outcomes can be attributed directly to the effect of coffee alone.But Note that the randomization doesnot gaurantee the balance in the Covariates.<a href="https://statsepi.substack.com/p/out-of-balance" target="_blank">See</a>
 
-Randomization is a powerful statistical tool that eliminates bias, such as the confounding effect of smoking in this case given that it is applied properly. In real-world data, there are often multiple confounding variables beyond smoking. Randomization effectively mitigates these biases, allowing for a clearer understanding of the true effect of the treatment.
 
+### Isn't Randomization Magical
+<div style="text-align: center;" > <img src="/assets/images/posts/004/dag3.png" width="550" class="inline"> </div>
+
+
+In the coffee example, we only considered one confounder, but in reality, there are often multiple confounders that can complicate the relationship between the exposure (coffee) and the outcome (cancer). These confounders—such as smoking, sleep patterns, stress, and lifestyle choices—can create complex backdoor paths that introduce bias. However, with randomization, we don't have to worry about these confounders because randomization ensures that they are equally distributed across different treatment groups. This effectively blocks all backdoor paths, allowing us to isolate the true causal effect of the exposure (coffee) on the outcome (cancer). 
+
+###TO BE CONTINUED 
 
 ## More on Randomization
-> [Out of Balance](https://www.notion.so/Understanding-Randomization-with-DAGs-and-Simulations-12433e59073b80f8969bc75ecb5ab1fe?pvs=4#14833e59073b8017bfc1fe9a4f10b79c) , DarrenDahly,PhD
-> [RCT Analysis With Covariate Adjustment](https://www.fharrell.com/post/covadj/) Ewout Steyerbert
-> [statistical Control Requires Causal Justification](https://journals.sagepub.com/doi/10.1177/25152459221095823) , Wysocki,Lawson,Rhemtulla
+> <a href="https://statsepi.substack.com/p/out-of-balance" target="_blank">Out of Balance</a>, DarrenDahly,PhD
+
+> <a href="https://www.fharrell.com/post/covadj" target="_blank">Covariate Adjustment </a> Ewout Steyerbert
+
+> <a href="https://journals.sagepub.com/doi/10.1177/25152459221095823" target="_blank">statistical Control Requires Causal Justification </a>Wysocki,Lawson,Rhemtulla
+
 
 
 
