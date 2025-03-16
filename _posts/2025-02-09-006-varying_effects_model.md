@@ -34,11 +34,11 @@ Each row represents different projects. For this experiment, we use $$N=30$$. An
 We know that performance varies from person to person, and the effect of incentives also varies from person to person. We will start with a simple varying intercept and varying slope model. With this model, we are going to pool information from different clusters which vary. The distributions assigned to both intercepts and slopes enable pooling for both, as the model learns the prior from the data.
 
 $$
-P_{i} \sim Normal(\mu_{i},\sigma)
+  P_{i} \sim Normal(\mu_{i},\sigma)
 $$
 
 $$
-\mu_{i}=\alpha_{[pid]}+\beta_{[pid]} * A_{i}
+  \mu_{i}=\alpha_{[pid]}+\beta_{[pid]} * A_{i}
 $$
 
 But we cannot still strongly generalize the relationship between performance and incentives. The generalization is important to us because we want to make predictions outside the sample. We do this by testing the fact that inexperienced volunteers will have less effect on their performance despite getting incentives compared to experienced ones from our data. The proxy to experience is captured by our performance metric but it doesn't have to be only experience, it can be anything that drives performance.
