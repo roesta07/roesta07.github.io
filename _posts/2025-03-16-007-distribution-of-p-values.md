@@ -32,6 +32,7 @@ We define our **null distribution** (which represents data under $$H_0$$) and tw
 - One that is identical to the null (no real effect).
 - One that is shifted (indicating a true effect).
 
+
 ```python
 import pymc as pm
 import numpy as np
