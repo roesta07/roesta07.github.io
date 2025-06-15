@@ -17,7 +17,7 @@ excerpt: Varying Intercept and Slope Model with a Covarying Structure
 
 Most organizations need to structure a reward system. A function of such a reward system is to select, implement and monitor incentive programs to increase productivity. A common notion is to believe that the incentives increase productivity for everyone. So keeping that in mind, should we provide incentives to everyone and expect a certain boost in performance for a certain project? Or cluster participants with some criteria. Furthermore, We can do better! We can increase the precision and effectiveness of the program with the existing data we have.
 
-One of the criteria for selecting such programs depends on volunteers’ previous performances on different projects. But it is hard to generalize incentive strategies with historical performance because performance itself is an abstract term and varies by person, project, and time. However, we can model its variability and pool information because it also shares some common information.
+One of the criteria for selecting such programs depends on volunteers' previous performances on different projects. But it is hard to generalize incentive strategies with historical performance because performance itself is an abstract term and varies by person, project, and time. However, we can model its variability and pool information because it also shares some common information.
 
 ---
 
@@ -104,7 +104,7 @@ $$ which is obtained by decomposing the variance-covariance matrix so that we co
 It would be unnecessary to display different parameters on a table because most of the parameters now interact and are now dependent on each other, so it would be best to represent the model with the plot below.
 
 <div style="text-align: center;">
-  <img src="/assets/images/posts/006/posterior.png" width="1200" class="inline">
+  <img src="/assets/images/posts/006/posterior.png" width="1200" class="inline" alt="Posterior prediction plot showing incentive effects on volunteer performance using Bayesian varying effects model in organizational analytics">
 </div>
 
 *Fig 1.1; Posterior prediction: The performance score for with and without incentives by randomly selected volunteers. The blue line represents the raw data and the red dotted line represents the model.*
@@ -115,7 +115,7 @@ One thing to notice here is that the model does not retrodict with the raw data;
 Also, we expect some shrinkage in our prediction, but now the shrinkage is in two directions (Explained in the plot below). This means that there is some correlation between the performance of a volunteer with its effect on incentives which is on average $$0.7$$. So as the volunteer who performs well will perform even better with incentives as opposed to the ones who perform below average. The results are quite typical as expected. But now we can generalize it more profoundly with the help of our model.
 
 <div style="text-align: center;">
-  <img src="/assets/images/posts/006/pooling.png" width="350" class="inline">
+  <img src="/assets/images/posts/006/pooling.png" width="350" class="inline" alt="2D shrinkage visualization for intercept and slope in Bayesian hierarchical modeling of performance incentives">
 </div>
 *Fig:Shrinkage in 2-Dimension, for both intercept and slope*
 {: .text-center}

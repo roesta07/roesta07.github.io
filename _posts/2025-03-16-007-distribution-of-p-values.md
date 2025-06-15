@@ -125,7 +125,7 @@ plt.show()
 
     
 <div style="text-align: center;">
-  <img src="/assets/images/posts/007/plot1.png" width="1500" class="inline">
+  <img src="/assets/images/posts/007/plot1.png" width="1500" class="inline" alt="Comparison of null and sampling distributions for p-value simulation in Bayesian hypothesis testing, Marketing">
 </div>
 
 *Fig 1.1; Comparision of Cases*
@@ -169,7 +169,7 @@ plt.legend()
 ```
 
 <div style="text-align: center;">
-  <img src="/assets/images/posts/007/plot2.png" width="1500" class="inline">
+  <img src="/assets/images/posts/007/plot2.png" width="1500" class="inline" alt="Survival function and simulated samples for p-value calculation in Bayesian statistics and marketing analysis">
 </div>
 
 *Fig 1.2; Function that maps values to p-values*

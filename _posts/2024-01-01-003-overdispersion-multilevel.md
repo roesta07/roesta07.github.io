@@ -42,8 +42,8 @@ Thus, these types of likelihood/ models are widely used to account for dispersio
 For demonstration purposes, I have simulated only two variables: the Number of Trials (N), which is fixed for each experiment, and the Number of Successes (S).
 
 <div style="display: flex; align-items: flex-end; justify-content: center; gap: 32px; margin-bottom: 0.5em;">
-  <img src="/assets/images/posts/003/data00.png" alt="Data visualization" style="width: 200px;"/>
-  <img src="/assets/images/posts/003/distribution00.png" alt="Distribution plot" style="width: 400px;"/>
+  <img src="/assets/images/posts/003/data00.png" alt="Simulated marketing experiment data visualization for Bayesian analysis" style="width: 200px;"/>
+  <img src="/assets/images/posts/003/distribution00.png" alt="Distribution plot showing variability in marketing success rates, used for Bayesian statistical modeling" style="width: 400px;"/>
 </div>
 <p style="text-align: center; font-size: 1.1em; margin-top: 0;">Figure: Data visualization and distribution of the simulated data</p>
 
@@ -116,7 +116,7 @@ k \sim Exponential(1/10)
 $$
 
 <div style="text-align: center; margin: 1.5em 0;">
-  <img src="/assets/images/posts/003/prior01.png" alt="Prior distribution for probability of success" style="max-width: 600px; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);"/>
+  <img src="/assets/images/posts/003/prior01.png" alt="Prior distribution for probability of success in Bayesian marketing analysis" style="max-width: 600px; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);"/>
 </div>
 *Fig: Prior distribution for probability of success $$\theta$$.*
 
@@ -128,14 +128,14 @@ As shown in the figure above, we can see that the same prior distributions have 
 ## Posterior
 
 <div style="text-align: center; margin: 1.5em 0;">
-  <img src="/assets/images/posts/003/posterior02.png" alt="Posterior distribution of theta" style="max-width: 600px; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);"/>
+  <img src="/assets/images/posts/003/posterior02.png" alt="Posterior distribution of success probability using Bayesian statistics in marketing context" style="max-width: 600px; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);"/>
 </div>
 *Figure: Posterior Distribution of $$\theta$$*
 
 
 The plot shows that the model produces similar estimates for $$\theta$$. This is not a coincidence; rather, it is because the underlying specifications of the models are the same under certain assumptions.
 <div style="text-align: center; margin: 1.5em 0;">
-  <img src="/assets/images/posts/003/posterior04.png" alt="Posterior distribution of theta" style="max-width: 600px; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);"/>
+  <img src="/assets/images/posts/003/posterior04.png" alt="Comparison of posterior distributions for Bayesian and multilevel models in marketing analysis" style="max-width: 600px; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);"/>
 </div>
 *Figure: Posterior Distribution of $$\theta$$*
 
@@ -149,7 +149,7 @@ The key difference is that the multilevel binomial model offers more flexibility
 All these comparisons boil down to choosing the right model. Choosing the right model depends on several factors. If you only need the overall probability of success, $$\theta$$, as used here, the Beta-Binomial model (Model 1) is a good choice because it samples faster than the multilevel model. However, if you are interested in the probability of success for each individual trials, $$\theta_{i} $$, you need to use the Multilevel Binomial model (Model 2). Additionally, since Multilevel models allow more flexibility to handle dispersion in the data, they are preferable when you need to account for complex hierarchical structures or when the overdispersion patterns are more nuanced. Below is the plot for the probability of success for the first 5 observations.
 
 <div style="text-align: center; margin: 1.5em 0;">
-  <img src="/assets/images/posts/003/posterior03.png" alt="Posterior distribution for first five trials" style="max-width: 600px; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);"/>
+  <img src="/assets/images/posts/003/posterior03.png" alt="Posterior distribution for first five marketing trials using Bayesian multilevel modeling" style="max-width: 600px; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);"/>
 </div>
 *Figure: Posterior Distribution of $$\theta$$ for first five trials/experiment*
 

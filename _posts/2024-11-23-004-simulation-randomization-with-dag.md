@@ -11,20 +11,20 @@ toc: false
 #   - Bayesian
 #   - probability
 #   - standard
-excerpt: We’re going to use simulation to explore randomization. This is how engineers came to understand statistics
+excerpt: We're going to use simulation to explore randomization. This is how engineers came to understand statistics
 ---
 
-One random day, I was having a conversation with someone I’ll call Mike—*a Statistics Guru* who would soon change how I understood randomization.
+One random day, I was having a conversation with someone I'll call Mike—*a Statistics Guru* who would soon change how I understood randomization.
 
-I told him about how I use randomization everyday in my work, but honestly, I’d never really grasped how it actually works. All those theory, mathematical notations , assumptions, and terms like exchangeability, just end up clouding my understanding of randomization.
+I told him about how I use randomization everyday in my work, but honestly, I'd never really grasped how it actually works. All those theory, mathematical notations , assumptions, and terms like exchangeability, just end up clouding my understanding of randomization.
 
 Mike smiled, as if he knew something that I hadn't, and said,
 
->"Let me make it easy for you. I’ll show you how randomization really works in a simplest way that the world had never seen before."
+>"Let me make it easy for you. I'll show you how randomization really works in a simplest way that the world had never seen before."
 
-Of course that was an overstatement from Mike, but what he showed me was entirely new to me—even though it’s been around since long before computers.  All the text books I had read in my curriculum never included this. Then, as if to make things even more intriguing Mike said yet another controversial statement
+Of course that was an overstatement from Mike, but what he showed me was entirely new to me—even though it's been around since long before computers.  All the text books I had read in my curriculum never included this. Then, as if to make things even more intriguing Mike said yet another controversial statement
 
->“We’re going to use simulation to explore randomization. This is how engineers came to understand statistics.”
+>“We're going to use simulation to explore randomization. This is how engineers came to understand statistics.”
 
 Simulations? To understand something as theoretical as randomization? It sounded counterintuitive at first but I was intrigued.
 
@@ -46,7 +46,7 @@ From here on, it’s helpful to represent the Variables visually using a DAG (Di
 
 Take a look at this DAG (Fig. 1), which illustrates the data generation process we’ve been discussing.
 
-<div style="text-align: center;" > <img src="/assets/images/posts/004/dag1.png" width="350" class="inline"> </div>
+<div style="text-align: center;" > <img src="/assets/images/posts/004/dag1.png" width="350" class="inline" alt="DAG illustrating confounding in observational study for Bayesian analysis,Marketing"> </div>
 *Fig 1: DAG; a without randomization*
 {: .text-center}
 
@@ -154,7 +154,7 @@ plt.show()
 
 The observed association between coffee and cancer appears positive, as the estimates (represented by the blue dots) are clearly greater than zero. However, this is not a causal effect. How do we know that? Because, we explicitly set the causal effect of coffee on cancer to zero in our simulation. The true cause of cancer is smoking, which also influences coffee consumption. This creates a positive association between coffee and cancer, but it's not causal—it's driven by smoking acting as a confounder that affects both variables.
 
-<div > <img src="/assets/images/posts/004/groups_not_comparable.png" width="820" class="inline"> </div>
+<div > <img src="/assets/images/posts/004/groups_not_comparable.png" width="820" class="inline" alt="Group comparison visualization highlighting non-exchangeability in marketing analytics and Bayesian modeling"> </div>
 
 To better understand this, consider an illustration: the proportion of smokers is higher in the coffee-drinking group compared to the non-coffee group. This makes the two groups non-comparable, or more precisely, non-exchangeable.
 
@@ -163,7 +163,7 @@ To better understand this, consider an illustration: the proportion of smokers i
 Now that we understand the limitations of the previous approach, we can better appreciate the crucial role randomization plays.
 
 Consider this new DAG (Figure 3):
-<div style="text-align: center;"> <img src="/assets/images/posts/004/image.png" width="550" class="inline"> </div>
+<div style="text-align: center;"> <img src="/assets/images/posts/004/image.png" width="550" class="inline" alt="DAG showing randomized assignment in Bayesian causal inference for marketing experiments"> </div>
 *Figure 3 : DAG Randomized*
 {: .text-center}
 

@@ -36,7 +36,7 @@ our existing beliefs and the likelihood of the evidence (data);  $$P(\theta)$$ i
 Imagine you're moving into a new home—this is how the opening scene of many horror films begins. You had some strange experiences and made the decision to keep watch every night for a few days to see what would happen,but how could we reflect these prevailing notions  mathematically; Using Bayesian approach, the unknown probability of ghost(p) would be treated as a random variable and given a distribution.Let's plot some of the Prior beliefs before we discuss its underlying distributions.
 
 
-<div > <img src="https://github.com/roesta07/wiseletters/blob/ca9ac4c29f1433821af8b308f6d707bbfedd12be/assets/images/bayesian_updating/prior_distributions.png?raw=true" width="820" class="inline"> </div>
+<div > <img src="https://github.com/roesta07/wiseletters/blob/ca9ac4c29f1433821af8b308f6d707bbfedd12be/assets/images/bayesian_updating/prior_distributions.png?raw=true" width="820" class="inline" alt="Prior distributions visualization for Bayesian updating in marketing and belief analysis"> </div>
 
 *Fig 1: Prior Distributions*
 {: .text-center}
@@ -65,7 +65,7 @@ This suggests that the existence of ghosts (p=1) is extremely implausible and th
 Let's now enter the monitoring phase and begin gathering and documenting each of our paranormal encounters. Every day is like flipping a coin (Bernoulli trials): if we experience some paranormal activity, we record 1; otherwise, we record 0.  See the mathematical instructions at the end of the article.
 
 
-<div class="center" ><img src="https://raw.githubusercontent.com/roesta07/wiseletters/master/assets/images/bayesian_updating/updating.png" width="720" class="inline"> </div>
+<div class="center" ><img src="https://raw.githubusercontent.com/roesta07/wiseletters/master/assets/images/bayesian_updating/updating.png" width="720" class="inline" alt="Bayesian updating process visualization for belief revision in marketing analytics and statistics"> </div>
 *Fig 2: Updating our Beliefs*
 {: .text-center}
 
@@ -78,7 +78,7 @@ We begin with our preexisting belief about the ghost; if we have any paranormal 
 The process of updating continues until day 9, which is the present. Using the same Bayesian formula we previously encountered, we compute our posterior distribution for each day.
 
 
-<div class="center" ><img src="https://raw.githubusercontent.com/roesta07/wiseletters/master/assets/images/bayesian_updating/change.png" width="500" class="inline"> </div>
+<div class="center" ><img src="https://raw.githubusercontent.com/roesta07/wiseletters/master/assets/images/bayesian_updating/change.png" width="500" class="inline" alt="Change in beliefs over time using Bayesian updating, relevant to marketing and decision analysis"> </div>
 
 *Fig: Updated Beliefs*
 {: .text-center}
