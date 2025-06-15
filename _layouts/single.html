@@ -63,6 +63,20 @@ layout: default
       {% if page.share %}{% include social-share.html %}{% endif %}
 
       {% include post_pagination.html %}
+
+      {% assign related = site.posts | where_exp: "post", "post.tags | join: ',' | contains: page.tags[0]" | where_exp: "post", "post.url != page.url" | limit:3 %}
+      {% if related.size > 0 %}
+        <div class="related-posts">
+          <h3>Related Posts</h3>
+          <ul>
+            {% for post in related %}
+              <li>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
     </div>
 
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
