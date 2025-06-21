@@ -57,11 +57,7 @@ I have reparameterized both models using the same parameterization and assigned 
 ### **Beta Binomial (Model 1)**
 
 $$
-S \sim BetaBinomial(n,\theta) \quad Model\ 1
-$$
-
-$$
-\theta \sim Beta(\alpha,\beta)
+S \sim BetaBinomial(n,\alpha,\beta) \quad Model\ 1
 $$
 
 $$
@@ -80,7 +76,7 @@ S_{i} \sim Binomial(n,\theta_{i}) \quad Model\ 2
 $$
 
 $$
-\theta_i \sim Beta(\alpha,\beta)
+\theta_i \sim Beta(\alpha,\beta) \quad Prior
 $$
 
 $$
