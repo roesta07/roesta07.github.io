@@ -21,6 +21,8 @@ excerpt: A moment of realization when the Beta-Binomial Model and the Multilevel
 
 In this blog, I'll explore an interesting statistical relationship that I came to realize while experimenting with these two models: the Beta-Binomial Model and the Multilevel Binomial Model.
 
+The term "multilevel" can be quite vague when describing these models. For clarity, I'll provide a detailed model specification later in this post that will help you understand exactly what I mean by a "multilevel binomial model" in this context.
+
 ## Quick Intro on Beta-Binomial likelihood
 
 Let us assume the random variable S(success) to be binomially distributed, as
