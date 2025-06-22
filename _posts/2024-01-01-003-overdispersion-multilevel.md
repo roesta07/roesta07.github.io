@@ -17,9 +17,9 @@ tags:
   - Statistical Modeling
 excerpt: A moment of realization when the Beta-Binomial Model and the Multilevel Binomial Model produces similar estimates
 ---
-> One day I was tinkering with these two models, completely unaware they'd turn out to be the same!
+> One day I was experimenting with these two models, completely unaware they'd turn out to be the same*!
 
-In this post, I'll explore an interesting statistical relationship that many practitioners might not be aware of - how the Beta-Binomial Model and the Multilevel Binomial Model are essentially equivalent under certain conditions. While these two models appear quite different in their formulation, they can produce remarkably similar results. In fact, when the prior on group-level probabilities in the multilevel model is Beta-distributed, the marginal model becomes Beta-Binomial. Rather than focusing solely on their prior specifications, I'll demonstrate how the hierarchical structure of the Multilevel model, particularly when allowing success probability to vary between groups, generates patterns that closely mirror those produced by a Beta-Binomial model. This equivalence represents an elegant connection between two seemingly distinct statistical approaches that are commonly used in different analytical traditions.
+In this blog, I'll explore an interesting statistical relationship that I came to realize while experimenting with these two models: the Beta-Binomial Model and the Multilevel Binomial Model.
 
 ## Quick Intro on Beta-Binomial likelihood
 
@@ -47,12 +47,11 @@ For demonstration purposes, I have simulated only two variables: the Number of T
 </div>
 <p style="text-align: center; font-size: 1.1em; margin-top: 0;">Figure: Data visualization and distribution of the simulated data</p>
 
-We will use Bayesian methods for both models to facilitate comparison of their estimates. The main parameter of interest is the probability of success, denoted as
-$$\theta$$
 
 ## Full model Specifications
 
 I have reparameterized both models using the same parameterization and assigned identical priors to ensure a fair comparison. For the Beta-Binomial model, I've expressed the parameters $$\alpha$$ and $$\beta$$ in terms of $$\mu$$ (mean) and $$k$$ (concentration), where $$\alpha = \mu*k$$ and $$\beta = (1-\mu)*k$$.
+These are common reparameterization in these kinds of models as these are easy to interpret.
 
 ### **Beta Binomial (Model 1)**
 
@@ -89,7 +88,7 @@ $$
 
 ## Prior
 
-To ensure a fair comparison between the two models, we'll use identical prior distributions for both. This approach allows us to isolate the structural differences between the models without introducing bias from different prior specifications.
+To ensure a fair comparison between the two models, we'll use identical prior distributions for both. This is particularly important for the beta prior on $$\theta$$. This approach allows us to isolate the structural differences between the models without introducing bias from different prior specifications.
 ### **Priors : Beta Binomial (Model 1)**
 
 $$
@@ -129,16 +128,16 @@ As shown in the figure above, we can see that the same prior distributions have 
 *Figure: Posterior Distribution of $$\theta$$*
 
 
-The plot shows that the model produces similar estimates for $$\theta$$. This is not a coincidence; rather, it is because the underlying specifications of the models are the same under certain assumptions.
+The plot shows that the model produces similar estimates for $$\theta$$. This is not a coincidence; rather, it is because the underlying specifications of the models are the same under these assumptions.
 <div style="text-align: center; margin: 1.5em 0;">
   <img src="/assets/images/posts/003/posterior04.png" alt="Comparison of posterior distributions for Bayesian and multilevel models in marketing analysis" style="max-width: 600px; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);"/>
 </div>
 *Figure: Posterior Distribution of $$\theta$$*
 
 
-Both models produce similar estimates because they handle overdispersion in comparable ways. The multilevel-binomial model accounts for overdispersion by allowing the probability of success to vary across observations through random effects. Similarly, the beta-binomial model handles overdispersion by incorporating variability in the success probability using a beta distribution.
+Both models that we tried above produced similar estimates because they handled overdispersion in comparable ways. The multilevel-binomial model accounted for overdispersion by allowing the probability of success to vary across observations through random effects. Similarly, the beta-binomial model handled overdispersion by incorporating variability in the success probability using a beta distribution.
 
-The key difference is that the multilevel binomial model offers more flexibility and additional tools for modeling overdispersion. This flexibility allows us to incorporate group-level structures and other hierarchical relationships that might be present in the data, while still accounting for the extra variability that overdispersion introduces.
+The key difference is that the multilevel binomial model can offer more flexibility and additional tools for modeling overdispersion. This flexibility will allow us to incorporate group-level structures and other hierarchical relationships that might be present in the data, while still accounting for the extra variability that overdispersion introduces.
 
 ## Choosing the Right Model
 
@@ -149,5 +148,5 @@ All these comparisons boil down to choosing the right model. Choosing the right 
 </div>
 *Figure: Posterior Distribution of $$\theta$$ for first five trials/experiment*
 
-I typically prefer multilevel models because they provide more detailed information, which helps to better understand how the data is generated.
+Choosing the right model depends on the research questions at hand. I typically prefer multilevel models whenever I can, as they help understand the data at hand and have other interpretable properties. For example, see <a href="https://roesta07.github.io/models_with_memories" target="_blank">Models with memories</a>
 
