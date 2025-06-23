@@ -44,7 +44,7 @@ Thus, these types of likelihood/ models are widely used to account for dispersio
 For demonstration purposes, I have simulated only two variables: the Number of Trials (N), which is fixed for each experiment, and the Number of Successes (S).
 
 <div style="display: flex; align-items: flex-end; justify-content: center; gap: 32px; margin-bottom: 0.5em;">
-  <img src="/assets/images/posts/003/data00.png" alt="Simulated marketing experiment data visualization for Bayesian analysis" style="width: 200px;"/>
+  <img src="/assets/images/posts/003/data00-1.png" alt="Simulated marketing experiment data visualization for Bayesian analysis" style="width: 200px;"/>
   <img src="/assets/images/posts/003/distribution00.png" alt="Distribution plot showing variability in marketing success rates, used for Bayesian statistical modeling" style="width: 400px;"/>
 </div>
 <p style="text-align: center; font-size: 1.1em; margin-top: 0;">Figure: Data visualization and distribution of the simulated data</p>
