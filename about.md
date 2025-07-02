@@ -39,7 +39,7 @@ permalink : /about/
     <li><b>BTL Marketing Founder</b> &mdash; Realized the gap between field reality and reports, sparking my interest in statistics and data-driven decision making.</li>
     <li><b>Statistician</b> &mdash; Developed expertise in statistics and analytics for real-world applications.</li>
     <li><b>Clinical Research</b> &mdash; Gained hands-on experience in experimental design and advanced analytics.</li>
-    <li><b>Bayesian Advocate</b> &mdash; Focused on practical applications of probability theory and causal inference in marketing and business.</li>
+    <li><b>Causal Inference & Interpretable Modeling</b> &mdash; Applying probabilistic thinking to uncover actionable insights in marketing and business.</li>
   </ul>
 </div>
 
