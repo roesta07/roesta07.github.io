@@ -1,25 +1,68 @@
 <!-- Call to Action Banner -->
-<div style="background: #f8f9fa; border-radius: 8px; padding: 2em; margin: 2em 0; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-  <div style="display: flex; align-items: center; gap: 2.5em;">
+<style>
+@media (max-width: 768px) {
+  .cta-banner {
+    padding: 1.5em 1em !important;
+    margin: 1.5em 0 !important;
+  }
+  
+  .cta-banner .banner-content {
+    flex-direction: column !important;
+    gap: 1.5em !important;
+    text-align: center !important;
+  }
+  
+  .cta-banner .profile-image {
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 auto !important;
+  }
+  
+  .cta-banner .vertical-line {
+    width: 100% !important;
+    height: 2px !important;
+    margin: 0 !important;
+  }
+  
+  .cta-banner .content {
+    margin-left: 0 !important;
+  }
+  
+  .cta-banner .title {
+    font-size: 1.3em !important;
+  }
+  
+  .cta-banner .subtitle {
+    font-size: 0.75em !important;
+  }
+  
+  .cta-banner .cta-link {
+    font-size: 0.85em !important;
+  }
+}
+</style>
+
+<div class="cta-banner" style="background: #f8f9fa; border-radius: 8px; padding: 2em; margin: 2em 0; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+  <div class="banner-content" style="display: flex; align-items: center; gap: 2.5em;">
     <!-- Profile Image -->
-    <div style="width: 80px; height: 80px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); margin-left: 1em;">
+    <div class="profile-image" style="width: 80px; height: 80px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); margin-left: 1em;">
       <img src="/assets/images/rojan_profile.jpeg" alt="Ro Est" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
     </div>
     
     <!-- Vertical Blue Line -->
-    <div style="width: 3px; height: 150px; background: #007bff; flex-shrink: 0; margin-left: 1em;"></div>
+    <div class="vertical-line" style="width: 3px; height: 150px; background: #007bff; flex-shrink: 0; margin-left: 1em;"></div>
     
     <!-- Content -->
-    <div style="flex: 1; margin-left: 1.5em;">
+    <div class="content" style="flex: 1; margin-left: 1.5em;">
       <div style="color: #6c757d; font-size: 1.0em; margin-bottom: 0.0em;font-weight: bold;">Open to</div>
       <!-- For blog posts -->
-      <div style="color: #007bff; font-size: 1.5em; font-weight: bold; margin-bottom: 0.5em; font-family: 'Lato', sans-serif;">
+      <div class="title" style="color: #007bff; font-size: 1.5em; font-weight: bold; margin-bottom: 0.5em; font-family: 'Lato', sans-serif;">
         Collaboration <i class="fas fa-handshake" style="margin-left: 0.3em;"></i>
       </div>
-      <div style="color: #6c757d; font-size: 0.8em; margin-top: 0.5em;">
+      <div class="subtitle" style="color: #6c757d; font-size: 0.8em; margin-top: 0.5em;">
         "Helping companies improve their data-driven decisions"
       </div>
-      <a href="https://calendly.com/ro-esta07/30min" target="_blank" style="color: #007bff; text-decoration: none; font-size: 0.9em; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-style: italic; margin-top: 0.5em;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+      <a href="https://calendly.com/ro-esta07/30min" target="_blank" class="cta-link" style="color: #007bff; text-decoration: none; font-size: 0.9em; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-style: italic; margin-top: 0.5em;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
         Schedule a Meeting →
       </a>
     </div>
