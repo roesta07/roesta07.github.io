@@ -183,6 +183,12 @@ The parameter $$\beta_1$$ should not be interpreted as a within-effect, but rath
 
 The contextual effect ($$\beta_1$$​) reflects the difference between the total (marginal) effect of ad spend across regions and the within-region effect ($$\beta$$). It captures how much of the ad spend's apparent effect is explained by group-level (between-region) differences.
 
+---
+
+<div style="color: #6c757d; font-size: 0.9em; font-style: italic; margin: 2em 0; text-align: center;">
+  <em>"Disclaimer: While I strive for accuracy in this blog post, there may be mistakes or errors. If you find any issues, please report them so I can correct them and improve the content for everyone. Your feedback is valuable!"</em>
+</div>
+
 ## Appendix
 
 > <a href="https://colab.research.google.com/drive/1xt17zZtebLHPn6n4NheBqJ0nyWMrmar1?usp=sharing" target="_blank">Analysis Notebook</a>,contains Simulations and models
