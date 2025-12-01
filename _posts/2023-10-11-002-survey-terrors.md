@@ -13,7 +13,7 @@ toc: true
 excerpt: Sometimes you really wonder where examples like the Monty Hall problem are actually used.
 ---
 
-> Disclaimer: If you notice any similarities with the famous Monty Hall Problem, it's not just a coincidence. This application was actually inspired by the Monty Hall Problem.
+> Disclaimer: Based on Real events :)😭
 
 ## Problem Statement
 
